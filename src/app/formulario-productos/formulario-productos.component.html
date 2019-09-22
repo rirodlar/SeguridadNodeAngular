@@ -1,0 +1,17 @@
+<form novalidate (ngSubmit)="miForm.form.valid && insertar(productoNuevo)" #miForm="ngForm" >
+    <p>
+       ID:  <input type="text" [(ngModel)]="productoNuevo.id" name="id" required  #id="ngModel"/>
+    </p>
+    <span *ngIf="id.errors?.required">El camopo Id es obligatorio</span>
+    <p>
+       Concepto: <input type="text" [(ngModel)]="productoNuevo.concepto" name="concepto" />
+    </p>
+    <p>
+       Importe: <input type="text" [(ngModel)]="productoNuevo.importe" name="importe" />
+    </p>
+    <p>
+        <input type="submit" value="insertar"  />
+    </p>
+</form>
+
+<a [routerLink]="['/lista']" >lista</a>

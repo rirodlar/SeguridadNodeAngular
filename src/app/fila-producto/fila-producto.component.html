@@ -1,0 +1,29 @@
+<ng-container *ngIf="productoEditado!=producto">
+    <td>{{producto.id}}</td>
+    <td>{{producto.concepto | uppercase | slice:0:6}}</td>
+    <td>{{producto.importe  }}</td>
+    <td>{{producto.importe | iva }}</td>
+    <td>
+        <input type="button" value="borrar" (click)="borrar(producto)" />
+    </td>
+    <td>
+            <input  type="button" value="edicion rapida" (click)="editar(producto)" />
+    </td>
+    <td>
+        <input type="button" value="detalle" (click)="detalle(producto)" />
+    </td>
+    <td>
+        <a [routerLink]="['/formularioEdicion', 'producto.id']" >Editar2</a>
+        <input type="button" value="editar" (click)="editar2(producto)" />
+    </td>
+   
+</ng-container>
+
+<ng-container *ngIf="productoEditado==producto">
+    <td><input type="text" name="id" [(ngModel)]="producto.id" /></td>
+    <td><input type="text" name="concepto" [(ngModel)]="producto.concepto" /></td>
+    <td><input type="text" name="importe" [(ngModel)]="producto.importe" /></td>
+    <td>
+            <input   type="button" value="salvar" (click)="salvar(producto);productoEditado=null" />
+    </td>
+</ng-container>

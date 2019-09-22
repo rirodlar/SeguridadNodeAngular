@@ -1,0 +1,20 @@
+<form>
+    <p>
+       ID:  <input type="text" [(ngModel)]="productoEditar.id" name="id" />
+    </p>
+    <p>
+       Concepto: <input type="text" [(ngModel)]="productoEditar.concepto" name="concepto" />
+    </p>
+    <p>
+       Importe: <input type="text" [(ngModel)]="productoEditar.importe" name="importe" />
+    </p>
+    <p>
+      categoria: <input type="text" [(ngModel)]="productoEditar.categoria" name="categoria" />
+   </p>
+    <p>
+        <input type="button" value="salvar" (click)="salvar(productoEditar)" />
+    </p>
+    
+</form>
+
+

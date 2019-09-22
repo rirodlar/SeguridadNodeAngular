@@ -1,0 +1,25 @@
+<form>
+ 
+    <input type="text" [(ngModel)]="filtroConcepto" name="concepto" (keyup)="keyUp.next($event)"/>
+</form>
+<table>
+    <tr *ngFor="let producto of lista">
+   
+            <app-fila-producto 
+            [producto]="producto" 
+            [productoEditado]="productoEditado" 
+            (eventoBorrar) ="borrarProductoEvento($event)"
+            (eventoDetalle)="detalleProductoEvento($event)" 
+            (eventoEditar2)= "editar2ProductoEvento($event)"
+            (eventoEditar)= "editarProductoEvento($event)">
+        </app-fila-producto>
+        
+    </tr>
+</table>
+<!-- el router adminte muchos  parametrizaciones (array de parametros)-->
+<a [routerLink]="['/formulario']" >nuevo</a>
+
+
+{{productoEditado?.id}}
+{{productoEditado?.conceto}}
+{{productoEditado?.importe}}
