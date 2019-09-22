@@ -1,8 +1,13 @@
 #NODE
 npm init --yes
+
+
 npm install express --save
+
 npm install cors --save
+
 npm install --save jsonwebtoken express-jwt
+
 
 >> node servidor.js
 # MiApp
